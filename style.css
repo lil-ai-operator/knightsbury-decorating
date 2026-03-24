@@ -443,3 +443,25 @@ footer p{font-size:.76rem;color:rgba(255,255,255,.22);margin-top:.4rem}
 
 /* ── BRAND ICONS (Why Us section) ─────── */
 .brand-icon{width:48px;height:48px;margin:0 auto 1rem;display:block;border-radius:50%}
+
+/* ── PARTNERS LOGO SLIDER ─────────────── */
+.partners-section{background:var(--st);padding:3rem 0;overflow:hidden}
+.partners-header{text-align:center;padding:0 1rem 1.5rem}
+.partners-slider{position:relative;display:flex;align-items:center;gap:0}
+.partners-viewport{width:100%;overflow:hidden;mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent)}
+.partners-track{display:flex;gap:1.5rem;transition:transform .5s cubic-bezier(0.22,1,0.36,1);will-change:transform}
+.partner-item{flex-shrink:0;width:140px;height:80px;display:flex;align-items:center;justify-content:center;background:var(--w);border-radius:4px;border:1px solid rgba(27,77,62,.08);transition:transform .3s,box-shadow .3s}
+.partner-item:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(15,46,36,.1)}
+.partner-item img{max-width:110px;max-height:60px;width:auto;height:auto;display:block}
+.brand-text{font-family:'Cormorant Garamond',serif;font-size:.9rem;font-weight:600;color:var(--sl);letter-spacing:2px;text-transform:uppercase;padding:.5rem;text-align:center}
+.partners-arrow{background:rgba(27,77,62,.06);border:none;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--f);font-size:.9rem;transition:background .25s,opacity .25s;flex-shrink:0;z-index:2}
+.partners-arrow:hover{background:rgba(27,77,62,.12)}
+@media(max-width:768px){
+  .partner-item{width:110px;height:65px}
+  .partner-item img{max-width:85px;max-height:48px}
+}
+@media(max-width:480px){
+  .partner-item{width:90px;height:55px}
+  .partner-item img{max-width:70px;max-height:40px}
+  .brand-text{font-size:.75rem}
+}
