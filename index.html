@@ -3,17 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Knightsbury — Professional Painting & Decorating | Farnham</title>
-  <meta name="description" content="Trusted local painting and decorating in Farnham and surrounding Surrey/Hampshire. Interior, exterior, wallpaper and more. Free quotes. Quality guaranteed.">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <title>Knightsbury — Professional Painting & Decorating | Farnham & Surrey</title>
+  <meta name="description" content="Premium painting and decorating in Farnham and Surrey. Interior, exterior, wallpaper, and specialist finishes. Free quotes. Precision in every brushstroke.">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --navy: #1B2A4A;
-      --gold: #C9A84C;
-      --slate: #6B7B8C;
-      --cream: #F5F3EE;
-      --charcoal: #2D2D2D;
-      --white: #FFFFFF;
+      --forest:      #1B4D3E;
+      --deep-forest: #0F2E24;
+      --gold:        #C9A84C;
+      --gold-light:  #E8D5A3;
+      --ivory:       #FAF8F5;
+      --stone:       #F0EDE8;
+      --charcoal:    #2D2D2D;
+      --slate:       #6B7280;
+      --white:       #FFFFFF;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -21,7 +24,7 @@
     body {
       font-family: 'Inter', system-ui, sans-serif;
       color: var(--charcoal);
-      background: var(--cream);
+      background: var(--ivory);
       line-height: 1.6;
     }
 
@@ -32,7 +35,7 @@
 
     /* NAV */
     nav {
-      background: var(--navy);
+      background: var(--deep-forest);
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
@@ -45,12 +48,12 @@
     .logo {
       font-family: 'Playfair Display', serif;
       font-weight: 700;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       color: var(--white);
-      letter-spacing: 2px;
+      letter-spacing: 3px;
     }
 
-    .logo span { color: var(--gold); }
+    .logo-gold { color: var(--gold); }
 
     .nav-links {
       display: flex;
@@ -59,9 +62,9 @@
     }
 
     .nav-links a {
-      color: rgba(255,255,255,0.85);
+      color: rgba(255,255,255,0.8);
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 500;
       transition: color 0.2s;
     }
@@ -70,38 +73,32 @@
 
     .nav-cta {
       background: var(--gold);
-      color: var(--navy) !important;
-      padding: 0.5rem 1.2rem;
-      border-radius: 4px;
+      color: var(--deep-forest) !important;
+      padding: 0.45rem 1.1rem;
+      border-radius: 3px;
       font-weight: 600 !important;
     }
 
     /* HERO */
     .hero {
-      background: var(--navy);
+      background: var(--deep-forest);
       color: var(--white);
-      padding: 5rem 2rem 4rem;
+      padding: 6rem 2rem 5rem;
       text-align: center;
     }
 
-    .hero-badge {
-      display: inline-block;
-      background: rgba(201,168,76,0.15);
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      padding: 0.3rem 1rem;
-      border-radius: 50px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 1px;
-      margin-bottom: 1.5rem;
-      text-transform: uppercase;
+    .hero-rule {
+      width: 48px;
+      height: 2px;
+      background: var(--gold);
+      margin: 0 auto 1.5rem;
     }
 
     .hero h1 {
-      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
       max-width: 700px;
-      margin: 0 auto 1rem;
+      margin: 0 auto 1.2rem;
+      color: var(--white);
     }
 
     .hero h1 em {
@@ -109,11 +106,21 @@
       font-style: italic;
     }
 
+    .tagline {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--gold-light);
+      margin-bottom: 2rem;
+      letter-spacing: 0.5px;
+    }
+
     .hero p {
-      font-size: 1.1rem;
-      color: rgba(255,255,255,0.75);
-      max-width: 550px;
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.72);
+      max-width: 520px;
       margin: 0 auto 2.5rem;
+      line-height: 1.7;
     }
 
     .hero-actions {
@@ -125,132 +132,149 @@
 
     .btn-primary {
       background: var(--gold);
-      color: var(--navy);
-      padding: 0.85rem 2rem;
-      border-radius: 4px;
+      color: var(--deep-forest);
+      padding: 0.9rem 2.2rem;
+      border-radius: 3px;
       text-decoration: none;
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 0.95rem;
       transition: transform 0.2s, box-shadow 0.2s;
       display: inline-block;
+      letter-spacing: 0.3px;
     }
 
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(201,168,76,0.35); }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(201,168,76,0.3);
+    }
 
     .btn-secondary {
-      border: 2px solid rgba(255,255,255,0.3);
+      border: 1.5px solid rgba(255,255,255,0.25);
       color: var(--white);
-      padding: 0.8rem 2rem;
-      border-radius: 4px;
+      padding: 0.85rem 2.2rem;
+      border-radius: 3px;
       text-decoration: none;
       font-weight: 500;
-      transition: border-color 0.2s;
+      font-size: 0.95rem;
+      transition: border-color 0.2s, color 0.2s;
     }
 
     .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
 
     /* TRUST BAR */
     .trust-bar {
-      background: var(--white);
-      padding: 1.5rem 2rem;
+      background: var(--forest);
+      padding: 1.4rem 2rem;
       display: flex;
       justify-content: center;
-      gap: 3rem;
+      gap: 2.5rem;
       flex-wrap: wrap;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
     }
 
     .trust-item {
       display: flex;
       align-items: center;
       gap: 0.6rem;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 500;
-      color: var(--slate);
+      color: rgba(255,255,255,0.88);
     }
 
     .trust-icon {
-      width: 36px;
-      height: 36px;
-      background: var(--cream);
+      width: 32px;
+      height: 32px;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.4);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1rem;
+      font-size: 0.85rem;
       flex-shrink: 0;
+      color: var(--gold);
     }
 
-    /* SERVICES */
+    /* SECTION COMMONS */
     .section {
-      padding: 4rem 2rem;
+      padding: 4.5rem 2rem;
     }
 
     .section-label {
       text-align: center;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 600;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
     }
 
     .section-title {
       text-align: center;
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
-      color: var(--navy);
-      margin-bottom: 0.6rem;
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      color: var(--forest);
+      margin-bottom: 0.7rem;
     }
 
     .section-sub {
       text-align: center;
       color: var(--slate);
-      max-width: 500px;
+      max-width: 520px;
       margin: 0 auto 3rem;
       font-size: 0.95rem;
+      line-height: 1.7;
     }
 
+    .gold-rule {
+      width: 40px;
+      height: 2px;
+      background: var(--gold-light);
+      margin: 0 auto 3rem;
+    }
+
+    /* SERVICES */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1.5rem;
-      max-width: 1000px;
+      max-width: 1060px;
       margin: 0 auto;
     }
 
     .service-card {
       background: var(--white);
-      border-radius: 8px;
-      padding: 1.8rem;
-      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 6px;
+      padding: 2rem;
+      border: 1px solid rgba(27,77,62,0.08);
       transition: transform 0.2s, box-shadow 0.2s;
     }
 
     .service-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(27,42,74,0.1);
+      box-shadow: 0 14px 36px rgba(15,46,36,0.1);
     }
 
     .service-icon {
-      font-size: 2rem;
+      font-size: 2.2rem;
       margin-bottom: 1rem;
     }
 
     .service-card h3 {
       font-size: 1.1rem;
-      color: var(--navy);
-      margin-bottom: 0.5rem;
+      color: var(--forest);
+      margin-bottom: 0.6rem;
+      font-family: 'Playfair Display', serif;
     }
 
     .service-card p {
       font-size: 0.88rem;
       color: var(--slate);
+      line-height: 1.65;
     }
 
     /* AREAS */
     .areas-section {
-      background: var(--navy);
+      background: var(--forest);
       color: var(--white);
     }
 
@@ -260,89 +284,98 @@
 
     .areas-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
       gap: 0.75rem;
-      max-width: 800px;
+      max-width: 700px;
       margin: 0 auto;
     }
 
     .area-tag {
-      background: rgba(201,168,76,0.12);
-      border: 1px solid rgba(201,168,76,0.3);
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.25);
       border-radius: 50px;
       padding: 0.5rem 1.2rem;
       text-align: center;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: rgba(255,255,255,0.85);
       font-weight: 500;
     }
 
     /* PRICING */
-    .pricing-blocks {
+    .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 1.5rem;
-      max-width: 700px;
+      max-width: 720px;
       margin: 0 auto;
     }
 
     .pricing-card {
       background: var(--white);
-      border-radius: 8px;
-      padding: 2rem;
+      border-radius: 6px;
+      padding: 2.2rem;
       text-align: center;
-      border: 2px solid transparent;
+      border: 1.5px solid rgba(27,77,62,0.1);
     }
 
     .pricing-card.featured {
       border-color: var(--gold);
+      border-width: 2px;
       position: relative;
     }
 
     .pricing-card.featured::before {
       content: "MOST COMMON";
       position: absolute;
-      top: -12px;
+      top: -13px;
       left: 50%;
       transform: translateX(-50%);
       background: var(--gold);
-      color: var(--navy);
-      font-size: 0.7rem;
+      color: var(--deep-forest);
+      font-size: 0.68rem;
       font-weight: 700;
-      padding: 0.2rem 0.8rem;
+      padding: 0.25rem 0.9rem;
       border-radius: 50px;
-      letter-spacing: 1px;
+      letter-spacing: 1.2px;
     }
 
     .pricing-card h3 {
-      color: var(--navy);
-      margin-bottom: 0.5rem;
+      color: var(--forest);
+      margin-bottom: 0.8rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
     }
 
     .price {
       font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       font-weight: 700;
-      color: var(--navy);
+      color: var(--forest);
     }
 
     .price span {
       font-size: 1rem;
       font-weight: 400;
       color: var(--slate);
+      font-family: 'Inter', sans-serif;
     }
 
     .pricing-note {
       font-size: 0.85rem;
       color: var(--slate);
-      margin-top: 0.5rem;
+      margin-top: 0.7rem;
+      line-height: 1.6;
     }
 
     /* WHY US */
+    .why-section {
+      background: var(--stone);
+    }
+
     .why-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 2.5rem;
       max-width: 900px;
       margin: 0 auto;
     }
@@ -350,40 +383,84 @@
     .why-item { text-align: center; }
 
     .why-icon {
-      font-size: 2.5rem;
+      font-size: 2.4rem;
       margin-bottom: 0.8rem;
     }
 
     .why-item h4 {
-      color: var(--navy);
-      margin-bottom: 0.4rem;
+      color: var(--forest);
+      margin-bottom: 0.5rem;
       font-size: 1.05rem;
+      font-family: 'Playfair Display', serif;
     }
 
     .why-item p {
       font-size: 0.88rem;
       color: var(--slate);
+      line-height: 1.65;
+    }
+
+    /* PROCESS */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .process-step {
+      text-align: center;
+      padding: 1.5rem 1rem;
+    }
+
+    .step-num {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--forest);
+      color: var(--gold);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+    }
+
+    .process-step h4 {
+      color: var(--forest);
+      margin-bottom: 0.4rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .process-step p {
+      font-size: 0.85rem;
+      color: var(--slate);
     }
 
     /* CONTACT */
     .contact-section {
-      background: var(--cream);
+      background: var(--ivory);
     }
 
     .contact-wrapper {
-      max-width: 600px;
+      max-width: 580px;
       margin: 0 auto;
       background: var(--white);
-      border-radius: 12px;
+      border-radius: 8px;
       padding: 2.5rem;
-      box-shadow: 0 8px 30px rgba(27,42,74,0.08);
+      box-shadow: 0 8px 32px rgba(15,46,36,0.07);
+      border: 1px solid rgba(27,77,62,0.07);
     }
 
     .contact-wrapper h3 {
       text-align: center;
-      font-size: 1.5rem;
-      color: var(--navy);
-      margin-bottom: 0.3rem;
+      font-size: 1.6rem;
+      color: var(--forest);
+      margin-bottom: 0.4rem;
     }
 
     .contact-wrapper .section-sub {
@@ -396,22 +473,24 @@
 
     .form-group label {
       display: block;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 600;
-      color: var(--navy);
+      color: var(--forest);
       margin-bottom: 0.4rem;
+      letter-spacing: 0.3px;
     }
 
     .form-group input,
     .form-group select,
     .form-group textarea {
       width: 100%;
-      padding: 0.75rem 1rem;
-      border: 1.5px solid rgba(0,0,0,0.12);
-      border-radius: 6px;
+      padding: 0.8rem 1rem;
+      border: 1.5px solid rgba(27,77,62,0.15);
+      border-radius: 5px;
       font-size: 0.95rem;
       font-family: 'Inter', sans-serif;
-      background: var(--cream);
+      background: var(--ivory);
+      color: var(--charcoal);
       transition: border-color 0.2s;
     }
 
@@ -432,22 +511,23 @@
 
     .submit-btn {
       width: 100%;
-      background: var(--gold);
-      color: var(--navy);
+      background: var(--forest);
+      color: var(--white);
       border: none;
       padding: 1rem;
-      border-radius: 6px;
-      font-size: 1rem;
-      font-weight: 700;
+      border-radius: 5px;
+      font-size: 0.95rem;
+      font-weight: 600;
       cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: background 0.2s, transform 0.2s;
       font-family: 'Inter', sans-serif;
       margin-top: 0.5rem;
+      letter-spacing: 0.3px;
     }
 
     .submit-btn:hover {
+      background: var(--deep-forest);
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(201,168,76,0.35);
     }
 
     .form-note {
@@ -459,30 +539,40 @@
 
     /* FOOTER */
     footer {
-      background: var(--navy);
-      color: rgba(255,255,255,0.5);
-      padding: 2.5rem 2rem;
+      background: var(--deep-forest);
+      color: rgba(255,255,255,0.45);
+      padding: 3rem 2rem;
       text-align: center;
     }
 
     .footer-logo {
       font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       font-weight: 700;
       color: var(--white);
       margin-bottom: 0.5rem;
+      letter-spacing: 3px;
     }
 
-    .footer-logo span { color: var(--gold); }
+    .footer-gold { color: var(--gold); }
 
-    footer p { font-size: 0.85rem; }
+    footer p { font-size: 0.85rem; margin-top: 0.4rem; }
+
+    .footer-rule {
+      width: 40px;
+      height: 1px;
+      background: var(--gold-light);
+      margin: 1.5rem auto;
+      opacity: 0.5;
+    }
 
     /* MOBILE */
     @media (max-width: 640px) {
       .nav-links { display: none; }
       .form-row { grid-template-columns: 1fr; }
-      .hero { padding: 3rem 1.5rem 2.5rem; }
+      .hero { padding: 4rem 1.5rem 3rem; }
       .contact-wrapper { padding: 1.5rem; }
+      .section { padding: 3.5rem 1.5rem; }
     }
   </style>
 </head>
@@ -490,7 +580,7 @@
 
   <!-- NAV -->
   <nav>
-    <div class="logo">KNIGHTS<span>B</span>URY</div>
+    <div class="logo">KNIGHTS<span class="logo-gold">B</span>URY</div>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#areas">Areas</a></li>
@@ -501,9 +591,10 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-badge">Farnham & Surrey</div>
-    <h1>We Don't Just Paint Walls.<br><em>We Protect Homes.</em></h1>
-    <p>Professional painting & decorating by Wayne & Clare — reliable, meticulous, and proud of every finish. Free, no-obligation quotes.</p>
+    <div class="hero-rule"></div>
+    <h1>Precision in Every<br><em>Brushstroke.</em></h1>
+    <p class="tagline">Heritage in every home.</p>
+    <p>Professional painting and decorating for homeowners and property professionals across Farnham and Surrey. The standard of craft you'd recommend — delivered reliably, every time.</p>
     <div class="hero-actions">
       <a href="#contact" class="btn-primary">Get a Free Quote</a>
       <a href="#services" class="btn-secondary">Our Services</a>
@@ -518,34 +609,35 @@
     </div>
     <div class="trust-item">
       <div class="trust-icon">✓</div>
-      Local Farnham-based pair
+      Fully insured
     </div>
     <div class="trust-item">
       <div class="trust-icon">✓</div>
-      Clean, tidy every day
+      Site always left clean
     </div>
     <div class="trust-item">
       <div class="trust-icon">✓</div>
-      Satisfaction guaranteed
+      Premium materials only
     </div>
   </div>
 
   <!-- SERVICES -->
   <section class="section" id="services">
     <div class="section-label">What We Do</div>
-    <h2 class="section-title">Full Painting & Decorating</h2>
-    <p class="section-sub">No job too small. From a single feature wall to a whole house — we bring the same care to every project.</p>
+    <h2 class="section-title">Painting & Decorating — Done Properly</h2>
+    <p class="section-sub">No job too small. From a single room refresh to a full property — every project receives the same care and precision.</p>
+    <div class="gold-rule"></div>
 
     <div class="services-grid">
       <div class="service-card">
         <div class="service-icon">🏠</div>
         <h3>Interior Painting</h3>
-        <p>Walls, ceilings, woodwork, radiators. Clean lines, quality finish, every room left spotless.</p>
+        <p>Walls, ceilings, woodwork, and radiators. Crisp lines, quality finish, every room left spotless.</p>
       </div>
       <div class="service-card">
         <div class="service-icon">🧱</div>
         <h3>Exterior Painting</h3>
-        <p>House walls, window frames, doors, fascias, soffits. Weather-resistant paints that last.</p>
+        <p>House walls, window frames, doors, fascias, and soffits. Weather-resistant systems that last.</p>
       </div>
       <div class="service-card">
         <div class="service-icon">📄</div>
@@ -559,13 +651,13 @@
       </div>
       <div class="service-card">
         <div class="service-icon">🚪</div>
-        <h3>Cabinet & Kitchen Refresh</h3>
-        <p>Give your kitchen a new lease of life without the cost of replacing. Paint those cabinet doors.</p>
+        <h3>Kitchen & Cabinet Refresh</h3>
+        <p>Give your kitchen a new lease of life without replacing. Cabinet doors painted to a flawless finish.</p>
       </div>
       <div class="service-card">
         <div class="service-icon">🏡</div>
         <h3>Decking & Fencing</h3>
-        <p>Staining, painting, sealing. Garden woodwork that weathers well and looks great year after year.</p>
+        <p>Staining, painting, and sealing. Garden woodwork that weathers well and looks great year after year.</p>
       </div>
     </div>
   </section>
@@ -574,7 +666,9 @@
   <section class="section areas-section" id="areas">
     <div class="section-label">Coverage</div>
     <h2 class="section-title">Proudly Serving Farnham & Surrounds</h2>
-    <p class="section-sub">A short drive or walk from wherever you are — we're your local pair.</p>
+    <p class="section-sub">A short drive from wherever you are — we're your local professional decorators.</p>
+    <div class="gold-rule" style="background: rgba(201,168,76,0.4);"></div>
+
     <div class="areas-grid">
       <div class="area-tag">Farnham</div>
       <div class="area-tag">Alton</div>
@@ -589,51 +683,85 @@
     </div>
   </section>
 
+  <!-- HOW IT WORKS -->
+  <section class="section">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">Simple, Straightforward</h2>
+    <p class="section-sub">From first message to finished job — a clear process, no jargon, no surprises.</p>
+    <div class="gold-rule"></div>
+
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <h4>Get in Touch</h4>
+        <p>Send us a message or call. Tell us what you need — or just describe what you're trying to achieve.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <h4>We Visit & Quote</h4>
+        <p>We come to see the job in person. We don't quote from photos — we quote from what we actually see.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <h4>Work Begins</h4>
+        <p>Once agreed, we turn up on time, do the work properly, and keep the site clean every single day.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">4</div>
+        <h4>Sign Off</h4>
+        <p>We walk through the finished work together. You're only billed when you're genuinely satisfied.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- PRICING -->
   <section class="section" id="pricing">
     <div class="section-label">Transparent Pricing</div>
-    <h2 class="section-title">Honest Rates, No Surprises</h2>
-    <p class="section-sub">What we quote is what you pay. We give fixed-price quotes for every job so there are no surprises.</p>
+    <h2 class="section-title">Honest Rates, No Hidden Extras</h2>
+    <p class="section-sub">What we quote is what you pay. We provide fixed-price quotes for every job — no surprises, no pressure.</p>
+    <div class="gold-rule"></div>
 
-    <div class="pricing-blocks">
+    <div class="pricing-grid">
       <div class="pricing-card">
         <h3>Per Day Rate</h3>
         <div class="price">£200–£250<span>/person</span></div>
-        <p class="pricing-note">Full day, all materials supplied</p>
+        <p class="pricing-note">Full day rate. All materials and labour included. We supply everything.</p>
       </div>
       <div class="pricing-card featured">
-        <h3>Fixed Quote</h3>
+        <h3>Fixed Project Quote</h3>
         <div class="price">Your Job</div>
-        <p class="pricing-note">We visit, assess, and quote. No obligation. You decide — no pressure.</p>
+        <p class="pricing-note">We visit, assess, and provide a fixed-price quote. No obligation. No pressure. Just a honest number.</p>
       </div>
     </div>
   </section>
 
   <!-- WHY US -->
-  <section class="section" style="background: var(--white);">
+  <section class="section why-section">
     <div class="section-label">Why Knightsbury</div>
-    <h2 class="section-title">The Pair You Can Trust</h2>
-    <p class="section-sub">Wayne and Clare are the people behind every brushstroke. Not a franchise. Not a crew you've never met.</p>
+    <h2 class="section-title">The Standard You Deserve</h2>
+    <p class="section-sub">We're not the cheapest. We never will be. We're the one you call when the finish actually matters.</p>
+    <div class="gold-rule"></div>
+
     <div class="why-grid">
       <div class="why-item">
         <div class="why-icon">🛡️</div>
         <h4>We Show Up</h4>
-        <p>On time, every time. If plans change, we tell you. That's just respect.</p>
+        <p>On time, every time. If plans change, we tell you. That's just basic respect — and it's rarer than it should be.</p>
       </div>
       <div class="why-item">
         <div class="why-icon">🧹</div>
         <h4>Left Spotless</h4>
-        <p>We protect your furniture, cover floors, and leave the site cleaner than we found it.</p>
+        <p>Floors covered, furniture protected, site cleaned every evening. We leave your home the way we found it — but painted.</p>
       </div>
       <div class="why-item">
         <div class="why-icon">✅</div>
         <h4>Done Right First Time</h4>
-        <p>Proper prep, quality paints, clean lines. We don't cut corners — we do it once and do it well.</p>
+        <p>Proper prep, quality paints, clean lines. We don't cut corners — we do it once and do it to a standard we're proud of.</p>
       </div>
       <div class="why-item">
         <div class="why-icon">💬</div>
         <h4>Clear Communication</h4>
-        <p>No jargon. No confusing quotes. Just honest advice on what you need and what it'll cost.</p>
+        <p>No jargon, no confusing quotes, no vague timelines. Just honest advice on what's needed and what it'll cost.</p>
       </div>
     </div>
   </section>
@@ -642,8 +770,8 @@
   <section class="section contact-section" id="contact">
     <div class="contact-wrapper">
       <h3>Request a Free Quote</h3>
-      <p class="section-sub">Tell us what you need — we'll get back to you within 24 hours with a honest, no-obligation quote.</p>
-      <form name="quote-request" netlify method="POST" data-netlify="true">
+      <p class="section-sub">Tell us what you need. We'll be in touch within 24 hours with a honest, no-obligation quote.</p>
+      <form name="quote-request" method="POST" data-netlify="true">
         <input type="hidden" name="form-name" value="quote-request">
         <div class="form-row">
           <div class="form-group">
@@ -678,16 +806,17 @@
           <textarea id="description" name="description" placeholder="Number of rooms, approximate size, any specific requirements..."></textarea>
         </div>
         <button type="submit" class="submit-btn">Send Quote Request</button>
-        <p class="form-note">No commitment. No pressure. Just a honest quote from your local pair.</p>
+        <p class="form-note">No commitment. No pressure. Just a honest quote from your local professionals.</p>
       </form>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-logo">KNIGHTS<span>B</span>URY</div>
+    <div class="footer-logo">KNIGHTS<span class="footer-gold">B</span>URY</div>
     <p>Professional Painting & Decorating — Farnham & Surrey</p>
-    <p style="margin-top: 0.5rem;">© 2026 Knightsbury. All rights reserved.</p>
+    <div class="footer-rule"></div>
+    <p>© 2026 Knightsbury. All rights reserved.</p>
   </footer>
 
 </body>
