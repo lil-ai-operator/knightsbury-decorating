@@ -241,7 +241,22 @@ footer p{font-size:.76rem;color:rgba(255,255,255,.22);margin-top:.4rem}
 .legal-content h2{font-size:1.4rem;color:var(--f);margin:2.5rem 0 .8rem}
 .legal-content p{font-size:.92rem;color:var(--sl);line-height:1.8;font-weight:300;margin-bottom:1rem}
 
-/* ── RESPONSIVE ──────────────────────── */
+/* ── TRUSTED BRANDS ───────────────── */
+.brands-section{background:var(--st);padding:4rem 2rem;text-align:center}
+.brands-label{font-size:.65rem;color:var(--sl);letter-spacing:3px;text-transform:uppercase;font-weight:600;margin-bottom:2rem}
+.brands-grid{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:2.5rem;max-width:900px;margin:0 auto}
+.brand-item{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--sl);letter-spacing:2px;text-transform:uppercase;opacity:.55;transition:opacity .3s;padding:.5rem 1.5rem}
+.brand-item:hover{opacity:1}
+.brands-divider{width:1px;height:28px;background:rgba(27,77,62,.15);display:none}
+
+/* ── TEAM SECTION ─────────────────── */
+.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem}
+.team-card{border-radius:4px;overflow:hidden}
+.team-card img{width:100%;height:320px;object-fit:cover;display:block;transition:transform .7s var(--e)}
+.team-card:hover img{transform:scale(1.04)}
+.team-card-caption{padding:1.2rem 1rem;background:var(--w)}
+.team-card-caption h4{font-size:1rem;color:var(--f);margin-bottom:.2rem;font-family:'Outfit',sans-serif;font-weight:600}
+.team-card-caption p{font-size:.82rem;color:var(--sl);font-weight:300}
 @media(max-width:1024px){
   .about-grid{grid-template-columns:1fr;gap:2.5rem}
   .services-grid{grid-template-columns:1fr 1fr}
@@ -268,6 +283,11 @@ footer p{font-size:.76rem;color:rgba(255,255,255,.22);margin-top:.4rem}
   .why-grid{grid-template-columns:1fr 1fr}
   .services-grid{grid-template-columns:1fr}
   .frow{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .team-grid{grid-template-columns:1fr}
+  .brands-grid{gap:1.5rem}
+  .brand-item{font-size:1rem}
 }
 @media(max-width:480px){
   .intro-inner{grid-template-columns:1fr 1fr}
