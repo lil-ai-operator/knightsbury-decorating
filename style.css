@@ -418,7 +418,7 @@ nav.scrolled {
 
 /* ── CTA ─────────────────────────────────── */
 .cta-band { background: var(--f); padding: 6rem 2rem; text-align: center; position: relative; overflow: hidden; }
-.cta-band::before { content: ''; position: absolute; inset: 0; background-image: url('gallery-6.jpg'); background-size: cover; background-position: center; opacity: .08; }
+.cta-band::before { content: ''; position: absolute; inset: 0; background-image: url('gallery-6.jpg'); background-size: cover; background-position: center; background-size: cover; background-position: center; opacity: .08; }
 .cta-band h2 { font-size: clamp(2rem, 4vw, 3.2rem); color: var(--w); margin-bottom: .7rem; position: relative; }
 .cta-band p { color: rgba(255,255,255,.58); margin-bottom: 2.5rem; font-weight: 300; position: relative; }
 .cta-band .bp { background: var(--w); color: var(--d); font-size: .75rem; padding: 1.1rem 3rem; position: relative; }
