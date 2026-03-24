@@ -50,9 +50,9 @@ nav.scrolled{background:rgba(15,46,36,.97);padding:.85rem 3.5rem;box-shadow:0 4p
 /* ── HAMBURGER ─────────────────────────────── */
 .hamburger{display:none;flex-direction:column;justify-content:center;gap:6px;width:36px;height:36px;cursor:pointer;z-index:400;background:none;border:none}
 .hamburger span{display:block;width:26px;height:1.5px;background:var(--w);border-radius:2px;transition:all .35s var(--e);transform-origin:center}
-.hamburger.active span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
-.hamburger.active span:nth-child(2){opacity:0;transform:scaleX(0)}
-.hamburger.active span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+.hamburger.active span:nth-child(1){transform:translateY(7.5px) rotate(45deg)!important}
+.hamburger.active span:nth-child(2){opacity:0!important;transform:scaleX(0)!important}
+.hamburger.active span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)!important}
 .mobile-menu{position:fixed;inset:0;z-index:350;background:rgba(15,46,36,.98);backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;opacity:0;pointer-events:none;transition:opacity .4s var(--e)}
 .mobile-menu.open{opacity:1;pointer-events:all}
 .mobile-menu a{color:var(--w);font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;transition:color .25s}
@@ -61,9 +61,19 @@ nav.scrolled{background:rgba(15,46,36,.97);padding:.85rem 3.5rem;box-shadow:0 4p
 
 /* ── HERO ─────────────────────────────────── */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;background-image:url('hero-interior.jpg');transform:scale(1.05);transition:transform 8s var(--e)}
-.hero-bg.loaded{transform:scale(1)}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(15,46,36,.88) 0%,rgba(15,46,36,.66) 50%,rgba(15,46,36,.85) 100%)}
+.hero-slides{position:absolute;inset:0}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.8s var(--e)}
+.hero-bg.active{opacity:1;transform:scale(1.05)}
+.hero-bg.active.zoom{animation:heroZoom 8s var(--e) forwards}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(15,46,36,.88) 0%,rgba(15,46,36,.66) 50%,rgba(15,46,36,.85) 100%);z-index:1}
+.hero-dots{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;gap:.6rem;z-index:10}
+.hero-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.35);cursor:pointer;transition:background .3s,transform .3s}
+.hero-dot.active{background:var(--g);transform:scale(1.3)}
+.hero-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:10;background:rgba(15,46,36,.5);border:none;color:var(--g);width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:1.2rem;display:flex;align-items:center;justify-content:center;transition:background .3s;backdrop-filter:blur(8px)}
+.hero-arrow:hover{background:rgba(15,46,36,.8)}
+.hero-arrow.prev{left:1.5rem}
+.hero-arrow.next{right:1.5rem}
+@keyframes heroZoom{from{transform:scale(1.05)}to{transform:scale(1)}}
 .hero-content{position:relative;z-index:2;text-align:center;padding:9rem 2rem 5rem;max-width:860px}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:1rem;color:var(--g);font-size:.63rem;font-weight:600;letter-spacing:6px;text-transform:uppercase;margin-bottom:2rem;opacity:0;transform:translateY(16px);animation:fu .9s var(--e) .3s forwards}
 .hero-eyebrow::before,.hero-eyebrow::after{content:'';width:36px;height:1px;background:var(--g);opacity:.45}
@@ -103,7 +113,8 @@ nav.scrolled{background:rgba(15,46,36,.97);padding:.85rem 3.5rem;box-shadow:0 4p
 .ss{font-size:1rem;color:var(--sl);max-width:540px;margin:0 auto 3.5rem;line-height:1.78;font-weight:300}
 .sd-ss{color:rgba(255,255,255,.52)}
 .center{text-align:center}
-.gold-rule{width:60px;height:1px;background:linear-gradient(to right,transparent,var(--g),transparent);margin:0 auto 3.5rem}
+.gold-rule{width:0;height:1px;background:linear-gradient(to right,transparent,var(--g),transparent);margin:0 auto 3.5rem;transition:width 1.4s var(--e)}
+.gold-rule.visible{width:60px}
 
 /* ── ANIMATIONS ─────────────────────────── */
 @keyframes fu{to{opacity:1;transform:translateY(0)}}

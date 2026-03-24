@@ -29,10 +29,23 @@
     <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </nav>
 
-  <!-- ── HERO ───────────────────────────────── -->
+  <!-- ── HERO SLIDER ────────────────────────── -->
   <section class="hero">
-    <div class="hero-bg"></div>
+    <div class="hero-slides">
+      <div class="hero-bg active zoom" style="background-image:url('hero-interior.jpg')"></div>
+      <div class="hero-bg" style="background-image:url('gallery-1.jpg')"></div>
+      <div class="hero-bg" style="background-image:url('gallery-5.jpg')"></div>
+      <div class="hero-bg" style="background-image:url('wallpaper-scene-1.jpg')"></div>
+    </div>
     <div class="hero-overlay"></div>
+    <button class="hero-arrow prev" aria-label="Previous photo">&#10094;</button>
+    <button class="hero-arrow next" aria-label="Next photo">&#10095;</button>
+    <div class="hero-dots">
+      <div class="hero-dot active" data-slide="0"></div>
+      <div class="hero-dot" data-slide="1"></div>
+      <div class="hero-dot" data-slide="2"></div>
+      <div class="hero-dot" data-slide="3"></div>
+    </div>
     <div class="hero-content">
       <div class="hero-eyebrow">Farnham &amp; Surrey</div>
       <h1>Precision in Every<br><em>Brushstroke.</em></h1>
@@ -323,23 +336,5 @@
   </footer>
 
   <script src="site.js"></script>
-  <script>
-    // ── FAQ Accordion ───────────────────────
-    document.querySelectorAll('.faq-q').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const isOpen = btn.getAttribute('aria-expanded') === 'true';
-        // Close all
-        document.querySelectorAll('.faq-q').forEach(b => { b.setAttribute('aria-expanded','false'); b.classList.remove('open'); });
-        document.querySelectorAll('.faq-a').forEach(a => a.style.maxHeight = '0px');
-        // Open clicked if was closed
-        if (!isOpen) {
-          btn.setAttribute('aria-expanded', 'true');
-          btn.classList.add('open');
-          const ans = btn.nextElementSibling;
-          ans.style.maxHeight = ans.scrollHeight + 'px';
-        }
-      });
-    });
-  </script>
 </body>
 </html>
