@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery — Knightsbury Painting &amp; Decorating | Farnham &amp; Surrey</title>
+  <meta name="description" content="Our work — painting and decorating projects across Farnham and Surrey. Interior, exterior, wallpaper, kitchens, and more.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="logo">Knightsbury</a>
+    <ul class="nl">
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html" class="nc">Get a Quote</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1600&q=80&auto=format&fit=crop')"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <div class="se" style="color:var(--g)">Gallery</div>
+      <h1>Our Work</h1>
+      <p>A selection of recent projects across Farnham and Surrey</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:3rem">
+        <div class="se reveal">Interior Projects</div>
+        <h2 class="st reveal d1">Inside the Home</h2>
+        <div class="gold-rule reveal d2"></div>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=700&q=80&auto=format&fit=crop" alt="Interior — living room"><div class="gallery-overlay"><span class="gallery-label">Interior — Farnham</span></div></div>
+        <div class="gallery-item reveal d1"><img src="https://images.unsplash.com/photo-1562663474-6cbb3eaa4d14?w=700&q=80&auto=format&fit=crop" alt="Interior — bedroom"><div class="gallery-overlay"><span class="gallery-label">Bedroom — Crondall</span></div></div>
+        <div class="gallery-item reveal d2"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=700&q=80&auto=format&fit=crop" alt="Feature wall"><div class="gallery-overlay"><span class="gallery-label">Feature Wall — Alton</span></div></div>
+        <div class="gallery-item reveal d1"><img src="https://images.unsplash.com/photo-1560448075-bb485b067938?w=700&q=80&auto=format&fit=crop" alt="Wallpaper project"><div class="gallery-overlay"><span class="gallery-label">Wallpaper — Haslemere</span></div></div>
+        <div class="gallery-item reveal d2"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80&auto=format&fit=crop" alt="Hallway"><div class="gallery-overlay"><span class="gallery-label">Hallway — Farnham</span></div></div>
+        <div class="gallery-item reveal d3"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=700&q=80&auto=format&fit=crop" alt="Kitchen"><div class="gallery-overlay"><span class="gallery-label">Kitchen Refresh — Fleet</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:3rem">
+        <div class="se reveal">Exterior Projects</div>
+        <h2 class="st reveal d1">Outside the Home</h2>
+        <div class="gold-rule reveal d2"></div>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=80&auto=format&fit=crop" alt="Exterior"><div class="gallery-overlay"><span class="gallery-label">Exterior — Farnham</span></div></div>
+        <div class="gallery-item reveal d1"><img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=700&q=80&auto=format&fit=crop" alt="Front door"><div class="gallery-overlay"><span class="gallery-label">Front Door — Alton</span></div></div>
+        <div class="gallery-item reveal d2"><img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=700&q=80&auto=format&fit=crop" alt="Decking"><div class="gallery-overlay"><span class="gallery-label">Decking — Odiham</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <h2 class="reveal d1">Your Project Could Be Next</h2>
+    <p class="reveal d2">Free quotes. No obligation. Let us see your space and give you a honest price.</p>
+    <a href="contact.html" class="bp reveal d3">Get a Free Quote</a>
+  </section>
+
+  <footer>
+    <div class="fl">Knightsbury</div>
+    <div class="tg">Precision in every brushstroke. Heritage in every home.</div>
+    <div class="footer-links">
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a>
+    </div>
+    <div class="fr"></div>
+    <p>&copy; 2026 Knightsbury. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal, .gold-rule').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

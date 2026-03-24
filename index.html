@@ -3,964 +3,232 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Knightsbury — Professional Painting & Decorating | Farnham & Surrey</title>
+  <title>Knightsbury — Professional Painting &amp; Decorating | Farnham &amp; Surrey</title>
   <meta name="description" content="Premium painting and decorating in Farnham and Surrey. Interior, exterior, wallpaper, and specialist finishes. Free quotes. Precision in every brushstroke.">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --forest:      #1B4D3E;
-      --deep-forest: #0F2E24;
-      --gold:        #C9A84C;
-      --gold-light:  #E8D5A3;
-      --ivory:       #FAF8F5;
-      --stone:       #F0EDE8;
-      --charcoal:    #2D2D2D;
-      --slate:       #6B7280;
-      --white:       #FFFFFF;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: 'Outfit', system-ui, sans-serif;
-      color: var(--charcoal);
-      background: var(--ivory);
-      line-height: 1.6;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      line-height: 1.2;
-    }
-
-    /* NAV */
-    nav {
-      background: var(--deep-forest);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: 1.4rem;
-      color: var(--white);
-      letter-spacing: 3px;
-    }
-
-    .logo-gold { color: var(--gold); }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: rgba(255,255,255,0.8);
-      text-decoration: none;
-      font-size: 0.88rem;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover { color: var(--gold); }
-
-    .nav-cta {
-      background: var(--gold);
-      color: var(--deep-forest) !important;
-      padding: 0.45rem 1.1rem;
-      border-radius: 3px;
-      font-weight: 600 !important;
-    }
-
-    /* HERO */
-    .hero {
-      position: relative;
-      background: url('knightsbury-hero.jpg') center/cover no-repeat;
-      color: var(--white);
-      padding: 10rem 2rem 6rem;
-      text-align: center;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(160deg, rgba(15,46,36,.88) 0%, rgba(15,46,36,.70) 50%, rgba(15,46,36,.85) 100%);
-      z-index: 0;
-    }
-
-    .hero > * { position: relative; z-index: 1; }
-
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 1rem;
-      color: var(--gold);
-      font-size: .65rem;
-      font-weight: 600;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      margin-bottom: 2rem;
-      opacity: 0;
-      transform: translateY(18px);
-      animation: fu .9s var(--ease) .3s forwards;
-    }
-
-    .hero-eyebrow::before,
-    .hero-eyebrow::after {
-      content: '';
-      width: 36px;
-      height: 1px;
-      background: var(--gold);
-      opacity: .5;
-    }
-
-    .hero h1 {
-      font-size: clamp(3rem, 7vw, 5.5rem);
-      max-width: 760px;
-      margin: 0 auto 1rem;
-      color: var(--white);
-      opacity: 0;
-      transform: translateY(28px);
-      animation: fu 1s var(--ease) .5s forwards;
-    }
-
-    .hero h1 em {
-      color: var(--gold);
-      font-style: italic;
-    }
-
-    .hero-tagline {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: clamp(1.2rem, 2.5vw, 2rem);
-      color: var(--gold-light);
-      margin-bottom: 1.6rem;
-      opacity: 0;
-      transform: translateY(22px);
-      animation: fu 1s var(--ease) .7s forwards;
-    }
-
-    .hero-sub {
-      font-size: 1rem;
-      color: rgba(255,255,255,.65);
-      max-width: 500px;
-      margin: 0 auto 2.5rem;
-      font-weight: 300;
-      line-height: 1.75;
-      opacity: 0;
-      transform: translateY(22px);
-      animation: fu 1s var(--ease) .9s forwards;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      opacity: 0;
-      transform: translateY(22px);
-      animation: fu 1s var(--ease) 1.1s forwards;
-    }
-
-    .btn-primary {
-      background: var(--gold);
-      color: var(--deep-forest);
-      padding: .95rem 2.4rem;
-      border-radius: 2px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: .75rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      transition: transform .35s var(--spring), box-shadow .35s;
-      display: inline-block;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 14px 40px rgba(201,168,76,.35);
-    }
-
-    .btn-ghost {
-      border: 1.5px solid rgba(255,255,255,.25);
-      color: var(--white);
-      padding: .95rem 2.4rem;
-      border-radius: 2px;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: .75rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      transition: border-color .3s, transform .35s var(--spring);
-    }
-
-    .btn-ghost:hover {
-      border-color: var(--gold);
-      transform: translateY(-3px);
-    }
-
-    @keyframes fu { to { opacity: 1; transform: translateY(0); } }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity .85s var(--ease), transform .85s var(--ease);
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .d1 { transition-delay: .1s; }
-    .d2 { transition-delay: .2s; }
-    .d3 { transition-delay: .3s; }
-    .d4 { transition-delay: .4s; }
-
-    .gold-rule {
-      width: 0;
-      height: 1px;
-      background: linear-gradient(to right, transparent, var(--gold), transparent);
-      margin: 0 auto 3rem;
-      transition: width 1.4s var(--ease);
-    }
-
-    .gold-rule.visible { width: 60px; }
-
-    .tagline {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: clamp(1rem, 2vw, 1.25rem);
-      color: var(--gold-light);
-      margin-bottom: 2rem;
-      letter-spacing: 0.5px;
-    }
-
-    .hero p {
-      font-size: 1.05rem;
-      color: rgba(255,255,255,0.72);
-      max-width: 520px;
-      margin: 0 auto 2.5rem;
-      line-height: 1.7;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      background: var(--gold);
-      color: var(--deep-forest);
-      padding: 0.9rem 2.2rem;
-      border-radius: 3px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: transform 0.2s, box-shadow 0.2s;
-      display: inline-block;
-      letter-spacing: 0.3px;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(201,168,76,0.3);
-    }
-
-    .btn-secondary {
-      border: 1.5px solid rgba(255,255,255,0.25);
-      color: var(--white);
-      padding: 0.85rem 2.2rem;
-      border-radius: 3px;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: border-color 0.2s, color 0.2s;
-    }
-
-    .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
-
-    /* TRUST BAR */
-    .trust-bar {
-      background: var(--forest);
-      padding: 1.4rem 2rem;
-      display: flex;
-      justify-content: center;
-      gap: 2.5rem;
-      flex-wrap: wrap;
-    }
-
-    .trust-item {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 0.88rem;
-      font-weight: 500;
-      color: rgba(255,255,255,0.88);
-    }
-
-    .trust-icon {
-      width: 32px;
-      height: 32px;
-      background: rgba(201,168,76,0.15);
-      border: 1px solid rgba(201,168,76,0.4);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.85rem;
-      flex-shrink: 0;
-      color: var(--gold);
-    }
-
-    /* SECTION COMMONS */
-    .section {
-      padding: 4.5rem 2rem;
-    }
-
-    .section-label {
-      text-align: center;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.6rem;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: clamp(1.7rem, 3vw, 2.4rem);
-      color: var(--forest);
-      margin-bottom: 0.7rem;
-    }
-
-    .section-sub {
-      text-align: center;
-      color: var(--slate);
-      max-width: 520px;
-      margin: 0 auto 3rem;
-      font-size: 0.95rem;
-      line-height: 1.7;
-    }
-
-    .gold-rule {
-      width: 40px;
-      height: 2px;
-      background: var(--gold-light);
-      margin: 0 auto 3rem;
-    }
-
-    /* SERVICES */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      max-width: 1060px;
-      margin: 0 auto;
-    }
-
-    .service-card {
-      background: var(--white);
-      border-radius: 6px;
-      padding: 2rem;
-      border: 1px solid rgba(27,77,62,0.08);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .service-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 36px rgba(15,46,36,0.1);
-    }
-
-    .service-icon {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-    }
-
-    .service-card h3 {
-      font-size: 1.1rem;
-      color: var(--forest);
-      margin-bottom: 0.6rem;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .service-card p {
-      font-size: 0.88rem;
-      color: var(--slate);
-      line-height: 1.65;
-    }
-
-    /* AREAS */
-    .areas-section {
-      background: var(--forest);
-      color: var(--white);
-    }
-
-    .areas-section .section-label { color: var(--gold); }
-    .areas-section .section-title { color: var(--white); }
-    .areas-section .section-sub { color: rgba(255,255,255,0.6); }
-
-    .areas-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-      gap: 0.75rem;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .area-tag {
-      background: rgba(201,168,76,0.1);
-      border: 1px solid rgba(201,168,76,0.25);
-      border-radius: 50px;
-      padding: 0.5rem 1.2rem;
-      text-align: center;
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.85);
-      font-weight: 500;
-    }
-
-    /* PRICING */
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    .pricing-card {
-      background: var(--white);
-      border-radius: 6px;
-      padding: 2.2rem;
-      text-align: center;
-      border: 1.5px solid rgba(27,77,62,0.1);
-    }
-
-    .pricing-card.featured {
-      border-color: var(--gold);
-      border-width: 2px;
-      position: relative;
-    }
-
-    .pricing-card.featured::before {
-      content: "MOST COMMON";
-      position: absolute;
-      top: -13px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--gold);
-      color: var(--deep-forest);
-      font-size: 0.68rem;
-      font-weight: 700;
-      padding: 0.25rem 0.9rem;
-      border-radius: 50px;
-      letter-spacing: 1.2px;
-    }
-
-    .pricing-card h3 {
-      color: var(--forest);
-      margin-bottom: 0.8rem;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.15rem;
-    }
-
-    .price {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
-      font-weight: 700;
-      color: var(--forest);
-    }
-
-    .price span {
-      font-size: 1rem;
-      font-weight: 400;
-      color: var(--slate);
-      font-family: 'Inter', sans-serif;
-    }
-
-    .pricing-note {
-      font-size: 0.85rem;
-      color: var(--slate);
-      margin-top: 0.7rem;
-      line-height: 1.6;
-    }
-
-    /* WHY US */
-    .why-section {
-      background: var(--stone);
-    }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 2.5rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .why-item { text-align: center; }
-
-    .why-icon {
-      font-size: 2.4rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .why-item h4 {
-      color: var(--forest);
-      margin-bottom: 0.5rem;
-      font-size: 1.05rem;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .why-item p {
-      font-size: 0.88rem;
-      color: var(--slate);
-      line-height: 1.65;
-    }
-
-    /* PROCESS */
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
-      max-width: 900px;
-      margin: 0 auto;
-      position: relative;
-    }
-
-    .process-step {
-      text-align: center;
-      padding: 1.5rem 1rem;
-    }
-
-    .step-num {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: var(--forest);
-      color: var(--gold);
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1rem;
-    }
-
-    .process-step h4 {
-      color: var(--forest);
-      margin-bottom: 0.4rem;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .process-step p {
-      font-size: 0.85rem;
-      color: var(--slate);
-    }
-
-    /* CONTACT */
-    .contact-section {
-      background: var(--ivory);
-    }
-
-    .contact-wrapper {
-      max-width: 580px;
-      margin: 0 auto;
-      background: var(--white);
-      border-radius: 8px;
-      padding: 2.5rem;
-      box-shadow: 0 8px 32px rgba(15,46,36,0.07);
-      border: 1px solid rgba(27,77,62,0.07);
-    }
-
-    .contact-wrapper h3 {
-      text-align: center;
-      font-size: 1.6rem;
-      color: var(--forest);
-      margin-bottom: 0.4rem;
-    }
-
-    .contact-wrapper .section-sub {
-      margin-bottom: 2rem;
-    }
-
-    .form-group {
-      margin-bottom: 1.2rem;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--forest);
-      margin-bottom: 0.4rem;
-      letter-spacing: 0.3px;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 0.8rem 1rem;
-      border: 1.5px solid rgba(27,77,62,0.15);
-      border-radius: 5px;
-      font-size: 0.95rem;
-      font-family: 'Inter', sans-serif;
-      background: var(--ivory);
-      color: var(--charcoal);
-      transition: border-color 0.2s;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: var(--gold);
-    }
-
-    .form-group textarea { resize: vertical; min-height: 100px; }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    .submit-btn {
-      width: 100%;
-      background: var(--forest);
-      color: var(--white);
-      border: none;
-      padding: 1rem;
-      border-radius: 5px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.2s;
-      font-family: 'Inter', sans-serif;
-      margin-top: 0.5rem;
-      letter-spacing: 0.3px;
-    }
-
-    .submit-btn:hover {
-      background: var(--deep-forest);
-      transform: translateY(-2px);
-    }
-
-    .form-note {
-      text-align: center;
-      font-size: 0.8rem;
-      color: var(--slate);
-      margin-top: 1rem;
-    }
-
-    /* FOOTER */
-    footer {
-      background: var(--deep-forest);
-      color: rgba(255,255,255,0.45);
-      padding: 3rem 2rem;
-      text-align: center;
-    }
-
-    .footer-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 0.5rem;
-      letter-spacing: 3px;
-    }
-
-    .footer-gold { color: var(--gold); }
-
-    footer p { font-size: 0.85rem; margin-top: 0.4rem; }
-
-    .footer-rule {
-      width: 40px;
-      height: 1px;
-      background: var(--gold-light);
-      margin: 1.5rem auto;
-      opacity: 0.5;
-    }
-
-    /* MOBILE */
-    @media (max-width: 640px) {
-      .nav-links { display: none; }
-      .form-row { grid-template-columns: 1fr; }
-      .hero { padding: 4rem 1.5rem 3rem; }
-      .contact-wrapper { padding: 1.5rem; }
-      .section { padding: 3.5rem 1.5rem; }
-    }
-  </style>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- NAV -->
-  <nav>
-    <div class="logo">KNIGHTSBURY</div>
-    <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#areas">Areas</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+  <nav id="navbar">
+    <a href="index.html" class="logo">Knightsbury</a>
+    <ul class="nl">
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html" class="nc">Get a Quote</a></li>
     </ul>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-eyebrow">Farnham &amp; Surrey</div>
-    <h1>Precision in Every<br><em>Brushstroke.</em></h1>
-    <p class="hero-tagline">Heritage in every home.</p>
-    <p class="hero-sub">Professional painting and decorating for homeowners and property professionals who refuse to compromise on quality.</p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Get a Free Quote</a>
-      <a href="#services" class="btn-ghost">Our Services</a>
+    <div class="hero-bg" style="background-image: url('knightsbury-hero.jpg');"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Farnham &amp; Surrey</div>
+      <h1>Precision in Every<br><em>Brushstroke.</em></h1>
+      <p class="hero-tagline">Heritage in every home.</p>
+      <p class="hero-sub">Professional painting and decorating for homeowners and property professionals who refuse to compromise on quality.</p>
+      <div class="hero-actions">
+        <a href="contact.html" class="bp">Get a Free Quote</a>
+        <a href="services.html" class="bg">Our Services</a>
+      </div>
     </div>
   </section>
 
-  <!-- TRUST BAR -->
-  <div class="trust-bar">
-    <div class="trust-item">
-      <div class="trust-icon">✓</div>
-      Free, no-obligation quotes
-    </div>
-    <div class="trust-item">
-      <div class="trust-icon">✓</div>
-      Fully insured
-    </div>
-    <div class="trust-item">
-      <div class="trust-icon">✓</div>
-      Site always left clean
-    </div>
-    <div class="trust-item">
-      <div class="trust-icon">✓</div>
-      Premium materials only
+  <!-- INTRO STRIP -->
+  <div class="intro-strip">
+    <div class="intro-inner">
+      <div class="intro-stat reveal"><div class="num">100%</div><div class="label">Satisfaction</div></div>
+      <div class="intro-stat reveal d1"><div class="num">5-Star</div><div class="label">Google Reviews</div></div>
+      <div class="intro-stat reveal d2"><div class="num">GU9</div><div class="label">Farnham Postcodes</div></div>
+      <div class="intro-stat reveal d3"><div class="num">Fully</div><div class="label">Insured</div></div>
     </div>
   </div>
 
-  <!-- SERVICES -->
-  <section class="section" id="services">
-    <div class="section-label">What We Do</div>
-    <h2 class="section-title">Painting & Decorating — Done Properly</h2>
-    <p class="section-sub">No job too small. From a single room refresh to a full property — every project receives the same care and precision.</p>
-    <div class="gold-rule"></div>
+  <!-- ABOUT SNIPPET -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <div class="se">Who We Are</div>
+          <h2 class="st">The Standard You<br>Deserve.</h2>
+          <div class="gold-rule" style="margin:0 0 2rem 0"></div>
+          <p style="font-size:.95rem;color:var(--sl);line-height:1.8;font-weight:300;margin-bottom:1.5rem;">Knightsbury is a premium painting and decorating business serving Farnham and the Surrey-Hampshire border. We were founded on a single principle: that the standard of work should never be compromised.</p>
+          <p style="font-size:.95rem;color:var(--sl);line-height:1.8;font-weight:300;">We are not the cheapest. We never will be. We are the one you call when the finish actually matters.</p>
+          <a href="about.html" class="bp" style="margin-top:2rem;display:inline-block;">Learn More About Us</a>
+        </div>
+        <div class="about-img reveal d2">
+          <img src="https://images.unsplash.com/photo-1562663474-6cbb3eaa4d14?w=800&q=80&auto=format&fit=crop" alt="Knightsbury professional painting work">
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon">🏠</div>
-        <h3>Interior Painting</h3>
-        <p>Walls, ceilings, woodwork, and radiators. Crisp lines, quality finish, every room left spotless.</p>
+  <!-- SERVICES PREVIEW -->
+  <section class="section">
+    <div class="container" style="text-align:center">
+      <div class="se reveal">What We Do</div>
+      <h2 class="st reveal d1">Painting &amp; Decorating — Done Properly</h2>
+      <p class="ss reveal d2">No job too small. From a single room refresh to a full property — every project receives the same precision and care.</p>
+      <div class="gold-rule reveal d3"></div>
+      <div class="services-grid">
+        <div class="service-card reveal d1">
+          <div class="si"><img src="https://images.unsplash.com/photo-1562663474-6cbb3eaa4d14?w=800&q=80&auto=format&fit=crop" alt="Interior painting"></div>
+          <div class="sb"><h3>Interior Painting</h3><p>Walls, ceilings, woodwork, and radiators. Clean lines, quality finish, every room left spotless.</p></div>
+        </div>
+        <div class="service-card reveal d2">
+          <div class="si"><img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80&auto=format&fit=crop" alt="Exterior painting"></div>
+          <div class="sb"><h3>Exterior Painting</h3><p>House walls, window frames, doors, fascias, and soffits. Weather-resistant systems that last.</p></div>
+        </div>
+        <div class="service-card reveal d3">
+          <div class="si"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&auto=format&fit=crop" alt="Wallpaper"></div>
+          <div class="sb"><h3>Wallpaper Hanging</h3><p>All paper types. Pattern matching done properly. No bubbles, no gaps.</p></div>
+        </div>
+        <div class="service-card reveal d1">
+          <div class="si"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80&auto=format&fit=crop" alt="Feature walls"></div>
+          <div class="sb"><h3>Feature Walls</h3><p>Bold accent colours or statement wallpaper. One wall transforms a whole room.</p></div>
+        </div>
+        <div class="service-card reveal d2">
+          <div class="si"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80&auto=format&fit=crop" alt="Kitchen refresh"></div>
+          <div class="sb"><h3>Kitchen &amp; Cabinet Refresh</h3><p>Give your kitchen a new lease of life without replacing. Flawless cabinet finish.</p></div>
+        </div>
+        <div class="service-card reveal d3">
+          <div class="si"><img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&q=80&auto=format&fit=crop" alt="Decking fencing"></div>
+          <div class="sb"><h3>Decking &amp; Fencing</h3><p>Staining, painting, and sealing. Garden woodwork that weathers well year after year.</p></div>
+        </div>
       </div>
-      <div class="service-card">
-        <div class="service-icon">🧱</div>
-        <h3>Exterior Painting</h3>
-        <p>House walls, window frames, doors, fascias, and soffits. Weather-resistant systems that last.</p>
+      <a href="services.html" class="bp" style="margin-top:2.5rem;display:inline-block;">View All Services</a>
+    </div>
+  </section>
+
+  <!-- GALLERY PREVIEW -->
+  <section class="section section-alt">
+    <div class="container" style="text-align:center">
+      <div class="se reveal">Our Work</div>
+      <h2 class="st reveal d1">Recent Projects</h2>
+      <p class="ss reveal d2">Every home we touch becomes a reference for the next one. Here is a selection of our recent work.</p>
+      <div class="gold-rule reveal d3"></div>
+      <div class="gallery-grid">
+        <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=700&q=80&auto=format&fit=crop" alt="Interior project"><div class="gallery-overlay"><span class="gallery-label">Interior — Farnham</span></div></div>
+        <div class="gallery-item reveal d1"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=80&auto=format&fit=crop" alt="Exterior project"><div class="gallery-overlay"><span class="gallery-label">Exterior</span></div></div>
+        <div class="gallery-item reveal d2"><img src="https://images.unsplash.com/photo-1560448075-bb485b067938?w=700&q=80&auto=format&fit=crop" alt="Feature wall"><div class="gallery-overlay"><span class="gallery-label">Feature Wall</span></div></div>
+        <div class="gallery-item reveal d1"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80&auto=format&fit=crop" alt="Wallpaper project"><div class="gallery-overlay"><span class="gallery-label">Wallpaper</span></div></div>
+        <div class="gallery-item reveal d2"><img src="https://images.unsplash.com/photo-1562663474-6cbb3eaa4d14?w=700&q=80&auto=format&fit=crop" alt="Interior painting"><div class="gallery-overlay"><span class="gallery-label">Interior</span></div></div>
+        <div class="gallery-item reveal d3"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=700&q=80&auto=format&fit=crop" alt="Kitchen project"><div class="gallery-overlay"><span class="gallery-label">Kitchen Refresh</span></div></div>
       </div>
-      <div class="service-card">
-        <div class="service-icon">📄</div>
-        <h3>Wallpaper Hanging</h3>
-        <p>All paper types including paste-the-wall. Pattern matching done properly. No bubbles, no gaps.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🎨</div>
-        <h3>Feature Walls</h3>
-        <p>Bold accent colours or statement wallpaper. One wall done beautifully transforms a whole room.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🚪</div>
-        <h3>Kitchen & Cabinet Refresh</h3>
-        <p>Give your kitchen a new lease of life without replacing. Cabinet doors painted to a flawless finish.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🏡</div>
-        <h3>Decking & Fencing</h3>
-        <p>Staining, painting, and sealing. Garden woodwork that weathers well and looks great year after year.</p>
-      </div>
+      <a href="gallery.html" class="bp" style="margin-top:2.5rem;display:inline-block;background:transparent;color:var(--f);border:1.5px solid var(--f);padding:.95rem 2.4rem;">View Full Gallery</a>
     </div>
   </section>
 
   <!-- AREAS -->
-  <section class="section areas-section" id="areas">
-    <div class="section-label">Coverage</div>
-    <h2 class="section-title">Proudly Serving Farnham & Surrounds</h2>
-    <p class="section-sub">A short drive from wherever you are — we're your local professional decorators.</p>
-    <div class="gold-rule" style="background: rgba(201,168,76,0.4);"></div>
-
-    <div class="areas-grid">
-      <div class="area-tag">Farnham</div>
-      <div class="area-tag">Alton</div>
-      <div class="area-tag">Hook</div>
-      <div class="area-tag">Bordon</div>
-      <div class="area-tag">Haslemere</div>
-      <div class="area-tag">Odiham</div>
-      <div class="area-tag">Fleet</div>
-      <div class="area-tag">Crondall</div>
-      <div class="area-tag">Badshot Lea</div>
-      <div class="area-tag">Moor Park</div>
-    </div>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section class="section">
-    <div class="section-label">How It Works</div>
-    <h2 class="section-title">Simple, Straightforward</h2>
-    <p class="section-sub">From first message to finished job — a clear process, no jargon, no surprises.</p>
-    <div class="gold-rule"></div>
-
-    <div class="process-grid">
-      <div class="process-step">
-        <div class="step-num">1</div>
-        <h4>Get in Touch</h4>
-        <p>Send us a message or call. Tell us what you need — or just describe what you're trying to achieve.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num">2</div>
-        <h4>We Visit & Quote</h4>
-        <p>We come to see the job in person. We don't quote from photos — we quote from what we actually see.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num">3</div>
-        <h4>Work Begins</h4>
-        <p>Once agreed, we turn up on time, do the work properly, and keep the site clean every single day.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num">4</div>
-        <h4>Sign Off</h4>
-        <p>We walk through the finished work together. You're only billed when you're genuinely satisfied.</p>
+  <section class="section section-dark">
+    <div class="container">
+      <div class="areas-grid">
+        <div class="areas-photo reveal">
+          <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=900&q=80&auto=format&fit=crop" alt="Farnham Surrey">
+          <div class="areas-overlay"></div>
+          <div class="areas-content">
+            <h2>Proudly Serving<br>Farnham &amp; Surrounds</h2>
+            <p>A short drive from wherever you are — professional decorators you can rely on.</p>
+            <div class="areas-list">
+              <span class="atag">Farnham</span><span class="atag">Alton</span><span class="atag">Hook</span><span class="atag">Bordon</span><span class="atag">Haslemere</span><span class="atag">Crondall</span><span class="atag">Fleet</span><span class="atag">Odiham</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="se reveal">How It Works</div>
+          <h2 class="st sd-st reveal d1" style="text-align:left">Simple.<br>Straightforward.</h2>
+          <div class="gold-rule reveal d2" style="margin:0 0 2.5rem 0"></div>
+          <div class="process-steps" style="grid-template-columns:1fr 1fr">
+            <div class="step reveal d1"><div class="step-circle">1</div><h4>Get in Touch</h4><p>Tell us what you need — or describe what you are trying to achieve.</p></div>
+            <div class="step reveal d2"><div class="step-circle">2</div><h4>We Visit &amp; Quote</h4><p>We come to see the job. We quote from what we actually see, not photos.</p></div>
+            <div class="step reveal d3"><div class="step-circle">3</div><h4>Work Begins</h4><p>We turn up on time, do the work properly, and keep the site clean every day.</p></div>
+            <div class="step reveal d4"><div class="step-circle">4</div><h4>Sign Off</h4><p>We walk through the finished work together. Only billed when satisfied.</p></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- PRICING -->
-  <section class="section" id="pricing">
-    <div class="section-label">Transparent Pricing</div>
-    <h2 class="section-title">Honest Rates, No Hidden Extras</h2>
-    <p class="section-sub">What we quote is what you pay. We provide fixed-price quotes for every job — no surprises, no pressure.</p>
-    <div class="gold-rule"></div>
-
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <h3>Per Day Rate</h3>
-        <div class="price">£200–£250<span>/person</span></div>
-        <p class="pricing-note">Full day rate. All materials and labour included. We supply everything.</p>
-      </div>
-      <div class="pricing-card featured">
-        <h3>Fixed Project Quote</h3>
-        <div class="price">Your Job</div>
-        <p class="pricing-note">We visit, assess, and provide a fixed-price quote. No obligation. No pressure. Just a honest number.</p>
+  <!-- TESTIMONIALS -->
+  <section class="section section-dark" style="padding-top:0">
+    <div class="container">
+      <div style="text-align:center"><div class="se reveal">Testimonials</div><h2 class="st sd-st reveal d1">What Our Clients Say</h2><div class="gold-rule reveal d2"></div></div>
+      <div class="testimonial-card reveal d3">
+        <div class="qm">&#10022;</div>
+        <p class="ttext">The attention to detail was exceptional. Every edge was crisp, every surface immaculate. We could not be happier with the finish — the hallway looks better than when we moved in.</p>
+        <div class="tauth">Sarah Mitchell</div>
+        <div class="tmeta">Farnham, GU9</div>
       </div>
     </div>
   </section>
 
   <!-- WHY US -->
-  <section class="section why-section">
-    <div class="section-label">Why Knightsbury</div>
-    <h2 class="section-title">The Standard You Deserve</h2>
-    <p class="section-sub">We're not the cheapest. We never will be. We're the one you call when the finish actually matters.</p>
-    <div class="gold-rule"></div>
-
-    <div class="why-grid">
-      <div class="why-item">
-        <div class="why-icon">🛡️</div>
-        <h4>We Show Up</h4>
-        <p>On time, every time. If plans change, we tell you. That's just basic respect — and it's rarer than it should be.</p>
-      </div>
-      <div class="why-item">
-        <div class="why-icon">🧹</div>
-        <h4>Left Spotless</h4>
-        <p>Floors covered, furniture protected, site cleaned every evening. We leave your home the way we found it — but painted.</p>
-      </div>
-      <div class="why-item">
-        <div class="why-icon">✅</div>
-        <h4>Done Right First Time</h4>
-        <p>Proper prep, quality paints, clean lines. We don't cut corners — we do it once and do it to a standard we're proud of.</p>
-      </div>
-      <div class="why-item">
-        <div class="why-icon">💬</div>
-        <h4>Clear Communication</h4>
-        <p>No jargon, no confusing quotes, no vague timelines. Just honest advice on what's needed and what it'll cost.</p>
+  <section class="section section-alt">
+    <div class="container" style="text-align:center">
+      <div class="se reveal">Why Knightsbury</div>
+      <h2 class="st reveal d1">The Standard You Deserve</h2>
+      <p class="ss reveal d2">We are not the cheapest. We never will be. We are the one you call when the finish actually matters.</p>
+      <div class="gold-rule reveal d3"></div>
+      <div class="why-grid">
+        <div class="why-item reveal d1"><span class="wi">&#9981;</span><h4>We Show Up</h4><p>On time, every time. If plans change, we tell you. Basic respect — rarer than it should be.</p></div>
+        <div class="why-item reveal d2"><span class="wi">&#128465;</span><h4>Left Spotless</h4><p>Floors covered, furniture protected, site cleaned every evening. We leave your home the way we found it — but painted.</p></div>
+        <div class="why-item reveal d3"><span class="wi">&#10004;</span><h4>Done Right First Time</h4><p>Proper prep, quality paints, clean lines. We do not cut corners — we do it once and do it to a standard we are proud of.</p></div>
+        <div class="why-item reveal d4"><span class="wi">&#128172;</span><h4>Clear Communication</h4><p>No jargon, no vague quotes. Just honest advice on what is needed and what it will cost.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section class="section contact-section" id="contact">
-    <div class="contact-wrapper">
-      <h3>Request a Free Quote</h3>
-      <p class="section-sub">Tell us what you need. We'll be in touch within 24 hours with a honest, no-obligation quote.</p>
-      <form name="quote-request" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="quote-request">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" placeholder="First & last name" required>
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="07XXX XXX XXX" required>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="postcode">Postcode</label>
-          <input type="text" id="postcode" name="postcode" placeholder="e.g. GU9 9XX" required>
-        </div>
-        <div class="form-group">
-          <label for="service">Service Needed</label>
-          <select id="service" name="service" required>
-            <option value="" disabled selected>Select a service...</option>
-            <option>Interior Painting</option>
-            <option>Exterior Painting</option>
-            <option>Wallpaper Hanging</option>
-            <option>Feature Wall</option>
-            <option>Kitchen / Cabinet Refresh</option>
-            <option>Decking / Fencing</option>
-            <option>Full House / Multiple Jobs</option>
-            <option>Not Sure — Need Advice</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="description">Tell Us About the Job (optional)</label>
-          <textarea id="description" name="description" placeholder="Number of rooms, approximate size, any specific requirements..."></textarea>
-        </div>
-        <button type="submit" class="submit-btn">Send Quote Request</button>
-        <p class="form-note">No commitment. No pressure. Just a honest quote from your local professionals.</p>
-      </form>
-    </div>
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="se reveal">Ready to Start?</div>
+    <h2 class="reveal d1">Let&apos;s Talk About Your Project</h2>
+    <p class="reveal d2">Free, no-obligation quotes. We come to you, see the job, and give you a honest price.</p>
+    <a href="contact.html" class="bp reveal d3">Request a Free Quote</a>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-logo">KNIGHTSBURY</div>
-    <p>Professional Painting & Decorating — Farnham & Surrey</p>
-    <div class="footer-rule"></div>
-    <p>© 2026 Knightsbury. All rights reserved.</p>
+    <div class="fl">Knightsbury</div>
+    <div class="tg">Precision in every brushstroke. Heritage in every home.</div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="fr"></div>
+    <p>&copy; 2026 Knightsbury. All rights reserved.</p>
   </footer>
 
   <script>
+    // Nav scroll
     const nav = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 60);
     });
+
+    // Hero bg load animation
+    const heroBg = document.querySelector('.hero-bg');
+    if (heroBg) {
+      setTimeout(() => heroBg.classList.add('loaded'), 50);
+    }
+
+    // Reveal on scroll
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
+          if (entry.target.classList.contains('gold-rule')) {
+            entry.target.classList.add('visible');
+          }
         }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
     document.querySelectorAll('.reveal, .gold-rule').forEach(el => observer.observe(el));
   </script>
 </body>
