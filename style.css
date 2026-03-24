@@ -294,3 +294,38 @@ footer p{font-size:.76rem;color:rgba(255,255,255,.22);margin-top:.4rem}
   .why-grid{grid-template-columns:1fr}
   .hero h1{letter-spacing:-0.5px}
 }
+
+/* ── MOBILE-FIRST FIXES (added 2026-03-24) ─── */
+@media(max-width:540px){
+  /* Intro strip — 2x2 grid so stats never overflow */
+  .intro-inner{grid-template-columns:1fr 1fr!important;gap:1.5rem 1rem!important;padding:.5rem 1rem}
+  .intro-stat .num{font-size:2.2rem!important}
+  .intro-stat .label{font-size:.58rem!important;letter-spacing:1.5px!important}
+
+  /* Center the brands on mobile */
+  .brands-section{padding:3rem 1rem!important}
+  .brands-label{text-align:center!important}
+  .brands-grid{justify-content:center!important;gap:1.5rem 2rem!important}
+
+  /* Nav: less horizontal padding on mobile */
+  nav{padding-left:1.2rem!important;padding-right:1.2rem!important}
+
+  /* Hero: tighter padding */
+  .hero-content{padding:8rem 1.2rem 4rem!important}
+
+  /* About section text doesn't overflow */
+  .about-grid{grid-template-columns:1fr!important;gap:2rem!important}
+  .about-img img{height:240px!important}
+  .about-img{order:1}
+  .about-text{order:2}
+
+  /* CTA band: tighter padding */
+  .cta-band{padding:5rem 1.2rem!important}
+}
+
+/* Ensure brand items wrap naturally and stay centered */
+@media(max-width:400px){
+  .intro-inner{grid-template-columns:1fr 1fr!important}
+  .intro-stat .num{font-size:1.9rem!important}
+  .brands-grid{gap:1rem 1.5rem!important}
+}
