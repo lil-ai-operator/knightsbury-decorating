@@ -392,3 +392,40 @@ footer p{font-size:.76rem;color:rgba(255,255,255,.22);margin-top:.4rem}
   footer{padding:3rem 1.2rem 1.5rem}
   .flinks{gap:1.2rem}
 }
+
+/* ── TRUST BAR ─────────────────────────── */
+.trust-bar{background:var(--w);border-bottom:1px solid rgba(27,77,62,.08);padding:1.2rem 2rem}
+.trust-items{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:.5rem 0;max-width:1000px;margin:0 auto}
+.trust-item{display:flex;align-items:center;gap:.6rem;font-size:.8rem;color:var(--sl);font-weight:500;padding:.3rem 1.5rem}
+.trust-icon{color:var(--g);font-size:1rem;font-weight:700}
+.trust-sep{width:1px;height:20px;background:rgba(27,77,62,.1)}
+
+/* ── TESTIMONIALS GRID ────────────────── */
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.testimonial-card{background:var(--d);border-radius:4px;padding:2rem 1.8rem;text-align:left;position:relative;overflow:hidden;border:1px solid rgba(201,168,76,.1)}
+.quote-icon{width:40px;height:40px;margin-bottom:1rem;opacity:.6}
+.tstars{color:var(--g);font-size:.9rem;letter-spacing:2px;margin-bottom:.5rem}
+.ttext{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:rgba(255,255,255,.85);line-height:1.6;margin-bottom:1.2rem}
+
+/* ── FAQ ACCORDION ─────────────────────── */
+.faq-list{margin-top:3rem}
+.faq-item{border-bottom:1px solid rgba(27,77,62,.1)}
+.faq-q{width:100%;background:none;border:none;padding:1.3rem 0;display:flex;justify-content:space-between;align-items:center;gap:1rem;cursor:pointer;text-align:left}
+.faq-q span:first-child{font-size:1rem;color:var(--f);font-weight:500;font-family:'Outfit',sans-serif}
+.faq-plus{font-size:1.4rem;color:var(--g);font-weight:300;transition:transform .3s;flex-shrink:0}
+.faq-q.open .faq-plus{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s var(--e)}
+.faq-a p{font-size:.92rem;color:var(--sl);line-height:1.8;font-weight:300;padding-bottom:1.3rem}
+
+/* ── TRUST BAR RESPONSIVE ──────────────── */
+@media(max-width:768px){
+  .trust-items{justify-content:center;gap:.5rem}
+  .trust-sep{display:none}
+  .trust-item{padding:.3rem .8rem;font-size:.75rem}
+  .testimonials-grid{grid-template-columns:1fr!important;margin-top:2rem}
+  .testimonial-card{padding:1.8rem 1.5rem}
+}
+@media(max-width:480px){
+  .trust-items{flex-direction:column;gap:.5rem}
+  .trust-item{padding:.2rem .5rem}
+}
