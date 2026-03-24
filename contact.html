@@ -3,30 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact — Knightsbury Painting &amp; Decorating | Farnham &amp; Surrey</title>
+  <title>Contact — Knightsbury Premium Painting &amp; Decorating | Farnham &amp; Surrey</title>
   <meta name="description" content="Get in touch with Knightsbury for a free painting and decorating quote in Farnham and Surrey. No obligation.">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <div class="mobile-menu">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a><a href="contact.html" class="mobilecte">Get a Quote</a>
+  </div>
+
   <nav id="navbar">
     <a href="index.html" class="logo">Knightsbury</a>
-    <ul class="nl">
+    <ul class="nav-links">
       <li><a href="about.html">About</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="contact.html" class="nc">Get a Quote</a></li>
     </ul>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </nav>
 
   <div class="page-hero">
-    <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1562663474-6cbb3eaa4d14?w=1600&q=80&auto=format&fit=crop')"></div>
+    <div class="page-hero-bg" style="background-image:url('gallery-5.jpg')"></div>
     <div class="page-hero-overlay"></div>
     <div class="page-hero-content">
       <div class="se" style="color:var(--g)">Contact</div>
       <h1>Get a Free Quote</h1>
-      <p>Tell us about your project — we will be in touch within 24 hours.</p>
+      <p>Tell us about your project — we respond within 24 hours.</p>
     </div>
   </div>
 
@@ -34,13 +39,13 @@
     <div class="container">
       <div class="contact-grid">
 
-        <!-- Contact Info -->
+        <!-- Left -->
         <div>
           <div class="se reveal">Get in Touch</div>
-          <h2 class="st reveal d1" style="text-align:left">Let&apos;s Talk<br>About Your Project</h2>
+          <h2 class="st reveal d1" style="text-align:left">Let's Discuss<br>Your Project</h2>
           <div class="gold-rule reveal d2" style="margin:0 0 2.5rem 0"></div>
 
-          <div class="contact-info-item reveal d2">
+          <div class="ci-item reveal d2">
             <div class="cib">&#128205;</div>
             <div class="ci">
               <h4>Service Area</h4>
@@ -48,7 +53,7 @@
             </div>
           </div>
 
-          <div class="contact-info-item reveal d3">
+          <div class="ci-item reveal d3">
             <div class="cib">&#128231;</div>
             <div class="ci">
               <h4>Email</h4>
@@ -56,7 +61,7 @@
             </div>
           </div>
 
-          <div class="contact-info-item reveal d4">
+          <div class="ci-item reveal d4">
             <div class="cib">&#128242;</div>
             <div class="ci">
               <h4>Phone</h4>
@@ -64,18 +69,23 @@
             </div>
           </div>
 
-          <div class="contact-info-item reveal d4" style="margin-top:1rem;padding:1.5rem;background:var(--st);border-radius:4px;border:1px solid rgba(27,77,62,.07)">
-            <div class="ci" style="margin-left:0">
+          <div class="ci-item reveal d4" style="margin-top:1.5rem;padding:1.5rem;background:var(--st);border-radius:4px;border:1px solid rgba(27,77,62,.07)">
+            <div class="ci">
               <h4 style="color:var(--f)">What Happens Next</h4>
-              <p style="font-size:.88rem;color:var(--sl);line-height:1.7;font-weight:300;margin-top:.5rem">1. Send us a message with your details<br>2. We call or email within 24 hours<br>3. We visit to see the job and quote<br>4. You decide — no pressure, ever</p>
+              <p style="font-size:.88rem;color:var(--sl);line-height:1.75;font-weight:300;margin-top:.5rem">
+                1. You send us a message with your details<br>
+                2. We respond within 24 hours<br>
+                3. We visit to see the job and provide a quote<br>
+                4. You decide — no pressure, ever
+              </p>
             </div>
           </div>
         </div>
 
-        <!-- Contact Form -->
-        <div class="contact-form-card reveal d2">
+        <!-- Form -->
+        <div class="contact-card reveal d2">
           <h3>Request a Free Quote</h3>
-          <p class="ss">No commitment. No pressure. Just a honest quote from your local professionals.</p>
+          <p class="ss">No commitment. No pressure. Just a honest, no-obligation quote from your local professionals.</p>
           <form name="quote-request" method="POST" data-netlify="true">
             <input type="hidden" name="form-name" value="quote-request">
             <div class="frow">
@@ -84,7 +94,7 @@
                 <input type="text" id="name" name="name" placeholder="First &amp; last name" required>
               </div>
               <div class="fg">
-                <label for="phone">Phone Number</label>
+                <label for="phone">Phone</label>
                 <input type="tel" id="phone" name="phone" placeholder="07XXX XXX XXX" required>
               </div>
             </div>
@@ -93,7 +103,7 @@
               <input type="text" id="postcode" name="postcode" placeholder="e.g. GU9 9XX" required>
             </div>
             <div class="fg">
-              <label for="service">Service Needed</label>
+              <label for="service">Service</label>
               <select id="service" name="service" required>
                 <option value="" disabled selected>Select a service...</option>
                 <option>Interior Painting</option>
@@ -107,11 +117,11 @@
               </select>
             </div>
             <div class="fg">
-              <label for="message">Tell Us About the Job (optional)</label>
+              <label for="message">Tell Us About the Job</label>
               <textarea id="message" name="message" placeholder="Number of rooms, approximate size, any specific requirements..."></textarea>
             </div>
             <button type="submit" class="sb2">Send Quote Request</button>
-            <p style="text-align:center;font-size:.78rem;color:var(--sl);margin-top:1rem;font-weight:300">No commitment. No pressure. We aim to respond within 24 hours.</p>
+            <p style="text-align:center;font-size:.78rem;color:var(--sl);margin-top:1rem;font-weight:300">We aim to respond within 24 hours. No commitment.</p>
           </form>
         </div>
 
@@ -121,21 +131,14 @@
 
   <footer>
     <div class="fl">Knightsbury</div>
-    <div class="tg">Precision in every brushstroke. Heritage in every home.</div>
-    <div class="footer-links">
-      <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a>
+    <div class="ft">Precision in every brushstroke. Heritage in every home.</div>
+    <div class="flinks">
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy Policy</a>
     </div>
     <div class="fr"></div>
     <p>&copy; 2026 Knightsbury. All rights reserved.</p>
   </footer>
 
-  <script>
-    const nav = document.getElementById('navbar');
-    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); });
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-    }, { threshold: 0.08 });
-    document.querySelectorAll('.reveal, .gold-rule').forEach(el => observer.observe(el));
-  </script>
+  <script src="site.js"></script>
 </body>
 </html>
